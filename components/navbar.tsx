@@ -1,6 +1,9 @@
+'use client';
+
 import { siteConfig } from '@/config/site.config';
 import {
    ArrowRight02FreeIcons,
+   Cancel01FreeIcons,
    Facebook02FreeIcons,
    InstagramFreeIcons,
    Linkedin02FreeIcons,
@@ -11,10 +14,43 @@ import {
 } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import Modal from './modal';
 
 export default function Navbar() {
+   const [open, setOpen] = useState(false);
+   const [elHeight, setElHeight] = useState(0);
+   const ref = useRef<HTMLElement>(null);
+   const stickyRef = useRef<HTMLDivElement>(null);
+   const [isSticky, setIsSticky] = useState(false);
+
+   const toggleModal = () => {
+      setOpen(!open);
+   };
+
+   useEffect(() => {
+      const element = ref.current;
+      if (element) {
+         setElHeight(element.clientHeight);
+      }
+   }, []);
+
+   useEffect(() => {
+      const handleScroll = () => {
+         const stickyElement = stickyRef.current;
+         if (stickyElement) {
+            window.scrollY > elHeight ? setIsSticky(true) : setIsSticky(false);
+         }
+      };
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, [elHeight]);
+
    return (
-      <header>
+      <header ref={ref}>
          <div className="hidden border-b border-neutral-200 bg-white xl:block">
             <div className="container mx-auto px-5">
                <div className="flex items-center justify-between py-2.5">
@@ -96,7 +132,9 @@ export default function Navbar() {
             </div>
          </div>
 
-         <div className="bg-white">
+         <div
+            ref={stickyRef}
+            className={`bg-white transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 z-99 w-full translate-y-0 shadow-md' : ''}`}>
             <div className="container mx-auto px-5">
                <div className="flex items-center justify-between py-4">
                   <Link href={'/'}>
@@ -132,12 +170,24 @@ export default function Navbar() {
 
                   <button
                      type="button"
-                     className="flex size-10 items-center justify-center xl:hidden">
-                     <HugeiconsIcon
-                        icon={Menu02FreeIcons}
-                        className="size-7 rotate-180 text-neutral-700"
-                     />
+                     onClick={toggleModal}
+                     className="flex size-10 cursor-pointer items-center justify-center xl:hidden">
+                     {open ? (
+                        <HugeiconsIcon
+                           icon={Cancel01FreeIcons}
+                           className="size-7 rotate-180 text-neutral-700"
+                        />
+                     ) : (
+                        <HugeiconsIcon
+                           icon={Menu02FreeIcons}
+                           className="size-7 rotate-180 text-neutral-700"
+                        />
+                     )}
                   </button>
+
+                  {open && (
+                     <Modal elHeight={elHeight} open={open} setOpen={setOpen} />
+                  )}
                </div>
             </div>
          </div>
