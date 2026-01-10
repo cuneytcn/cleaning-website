@@ -31,14 +31,15 @@ export default function Herosection() {
                         className="ml-2"
                      />
                   </Link>
-                  <button
-                     type="button"
+                  <a
+                     href="https://www.youtube.com"
+                     target="_blank"
                      className="relative flex size-16 items-center justify-center rounded-full bg-blue-500 before:absolute before:inset-0 before:top-1/2 before:left-1/2 before:-z-10 before:size-12 before:-translate-x-1/2 before:-translate-y-1/2 before:animate-ping before:rounded-full before:bg-blue-500">
                      <HugeiconsIcon
                         icon={PlayCircle02Icon}
                         className="size-8 text-white"
                      />
-                  </button>
+                  </a>
                </div>
             </div>
          </div>
