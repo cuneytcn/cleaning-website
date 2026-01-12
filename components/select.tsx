@@ -48,7 +48,7 @@ export default function Select({
    return (
       <div ref={ref} className="group relative">
          <span className="mb-1 inline-flex text-neutral-700">
-            {label} {required && '(required)'}
+            {label} {required && '(zornlu)'}
          </span>
 
          <>

@@ -5,7 +5,7 @@ import {
    appointmentSchema,
 } from '@/lib/validations/appointment';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { SentFreeIcons } from '@hugeicons/core-free-icons';
+import { Loading03FreeIcons, SentFreeIcons } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -35,12 +35,32 @@ export default function Form() {
       handleSubmit,
       control,
       reset,
-      formState: { errors },
+      formState: { errors, isSubmitting },
    } = form;
 
-   const onSubmit: SubmitHandler<AppointmentFormData> = (data) => {
-      setToast({ message: 'Form başarıyla gönderildi!', type: 'success' });
-      reset();
+   const onSubmit: SubmitHandler<AppointmentFormData> = async (data) => {
+      try {
+         const res = await fetch('/api/appointment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+         });
+         if (!res.ok) {
+            const err = await res.json();
+            setToast({
+               message: err.error || 'Kayıt sırasında bir hata oluştu.',
+               type: 'error',
+            });
+            return;
+         }
+         setToast({ message: 'Form başarıyla gönderildi!', type: 'success' });
+         reset();
+      } catch (e) {
+         setToast({
+            message: 'Kayıt sırasında bir hata oluştu.',
+            type: 'error',
+         });
+      }
    };
 
    return (
@@ -58,8 +78,8 @@ export default function Form() {
             <Input
                {...register('name')}
                type="text"
-               label="Name"
-               placeholder="Your Name*"
+               label="Ad soyad"
+               placeholder="Ad soyad*"
                required
                error={errors.name?.message}
             />
@@ -67,8 +87,8 @@ export default function Form() {
             <Input
                {...register('email')}
                type="email"
-               label="Email adress"
-               placeholder="Your Email*"
+               label="Email adres"
+               placeholder="Email adres*"
                required
                error={errors.email?.message}
             />
@@ -76,8 +96,9 @@ export default function Form() {
             <Input
                {...register('phone')}
                type="text"
-               label="Phone Number"
-               placeholder="Your Phone Number*"
+               label="Telefon Numarası"
+               placeholder="Telefon numaranız*"
+               required
                error={errors.phone?.message}
             />
 
@@ -86,13 +107,13 @@ export default function Form() {
                control={form.control}
                render={({ field }) => (
                   <Select
-                     label="Services"
-                     placeholder="Select a service"
+                     label="Hizmet Seçimi"
+                     placeholder="Hizmet seçiniz"
                      required
                      options={[
-                        { label: 'Cleaning Service', value: 'cleaning' },
-                        { label: 'Consulting Service', value: 'consulting' },
-                        { label: 'Support Service', value: 'support' },
+                        { label: 'Temizlik Hizmeti', value: 'cleaning' },
+                        { label: 'Danışmanlık Hizmeti', value: 'consulting' },
+                        { label: 'Destek Hizmeti', value: 'support' },
                      ]}
                      value={field.value}
                      onChange={field.onChange}
@@ -103,12 +124,12 @@ export default function Form() {
 
             <div className="group col-span-full">
                <span className="mb-1 inline-flex text-neutral-700">
-                  Message (required)
+                  Mesaj (zorunlu)
                </span>
 
                <textarea
                   {...register('message')}
-                  placeholder="Your Message*"
+                  placeholder="Mesajınız*"
                   required
                   className={`h-32 w-full border ${errors.message ? 'border-red-500' : 'border-neutral-300'} bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-sm focus:border-blue-500 focus:outline-none md:col-span-2`}></textarea>
                {errors.message && (
@@ -120,12 +141,25 @@ export default function Form() {
             <button
                type="submit"
                className="inline-flex w-full cursor-pointer items-center justify-center bg-blue-500 px-4 py-3 text-white hover:bg-blue-600 md:col-span-2">
-               Send Message{' '}
-               <HugeiconsIcon
-                  icon={SentFreeIcons}
-                  strokeWidth={2}
-                  className="ml-2 size-4"
-               />
+               {isSubmitting ? (
+                  <>
+                     Message Sending{' '}
+                     <HugeiconsIcon
+                        icon={Loading03FreeIcons}
+                        strokeWidth={2}
+                        className="ml-2 size-4"
+                     />
+                  </>
+               ) : (
+                  <>
+                     Send Message{' '}
+                     <HugeiconsIcon
+                        icon={SentFreeIcons}
+                        strokeWidth={2}
+                        className="ml-2 size-4"
+                     />
+                  </>
+               )}
             </button>
          </form>
       </>

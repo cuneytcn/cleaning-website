@@ -19,7 +19,7 @@ export default function Input({
    return (
       <div className="group">
          <span className="mb-1 inline-flex text-neutral-700">
-            {label} {required && '(required)'}
+            {label} {required && '(zorunlu)'}
          </span>
          <input
             {...props}
