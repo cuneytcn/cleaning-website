@@ -1,9 +1,6 @@
 import Card from '@/components/card';
-import Input from '@/components/input';
-import Select from '@/components/select';
+import Form from '@/components/form';
 import { siteConfig } from '@/config/site.config';
-import { SentFreeIcons } from '@hugeicons/core-free-icons';
-import { HugeiconsIcon } from '@hugeicons/react';
 
 export default function ContactSection() {
    return (
@@ -48,59 +45,7 @@ export default function ContactSection() {
                </div>
 
                <div>
-                  <form className="grid gap-5 md:grid-cols-2">
-                     <Input
-                        name="name"
-                        type="text"
-                        label="Name"
-                        placeholder="Your Name*"
-                        required
-                     />
-                     <Input
-                        name="email"
-                        type="email"
-                        label="Email adress"
-                        placeholder="Your Email*"
-                        required
-                     />
-                     <Input
-                        name="password"
-                        type="password"
-                        label="Password"
-                        placeholder="Your Password*"
-                     />
-                     <Select
-                        name="services"
-                        label="Services"
-                        placeholder="Select a service"
-                        required
-                        options={[
-                           { label: 'Cleaning', value: 'cleaning' },
-                           { label: 'Gardening', value: 'gardening' },
-                           { label: 'Moving', value: 'moving' },
-                        ]}
-                     />
-                     <div className="group col-span-full">
-                        <span className="mb-1 inline-flex text-neutral-700">
-                           Message (required)
-                        </span>
-                        <textarea
-                           name="message"
-                           placeholder="Your Message*"
-                           required
-                           className="h-32 w-full border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-sm focus:border-blue-500 focus:outline-none md:col-span-2"></textarea>
-                     </div>
-                     <button
-                        type="submit"
-                        className="inline-flex w-full cursor-pointer items-center justify-center bg-blue-500 px-4 py-3 text-white hover:bg-blue-600 md:col-span-2">
-                        Send Message{' '}
-                        <HugeiconsIcon
-                           icon={SentFreeIcons}
-                           strokeWidth={2}
-                           className="ml-2 size-4"
-                        />
-                     </button>
-                  </form>
+                  <Form />
                </div>
             </div>
          </div>

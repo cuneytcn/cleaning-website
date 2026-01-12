@@ -1,23 +1,20 @@
 'use client';
 
 interface Props {
-   name: string;
-   value?: string;
    type: 'text' | 'email' | 'password';
    label?: string;
    placeholder?: string;
    required?: boolean;
-   onChange?: (value: string) => void;
+   error?: string;
 }
 
 export default function Input({
-   name,
-   value,
    type = 'text',
    label,
    placeholder,
    required,
-   onChange,
+   error,
+   ...props
 }: Props) {
    return (
       <div className="group">
@@ -25,14 +22,15 @@ export default function Input({
             {label} {required && '(required)'}
          </span>
          <input
+            {...props}
             type={type}
-            name={name}
-            value={value}
             placeholder={placeholder}
             required={required}
-            className="w-full border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-sm focus:border-blue-500 focus:outline-none"
-            onChange={(e) => onChange?.(e.target.value)}
+            className={`w-full border ${error ? 'border-red-500' : 'border-neutral-300'} bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-sm focus:border-blue-500 focus:outline-none`}
          />
+         {error && (
+            <span className="mt-1 block text-xs text-red-500">{error}</span>
+         )}
       </div>
    );
 }
