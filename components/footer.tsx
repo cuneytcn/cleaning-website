@@ -8,18 +8,18 @@ export default function Footer() {
                <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
                   <div>
                      <h4 className="mb-5 text-2xl font-medium text-white">
-                        About Us
+                        Hakkımızda
                      </h4>
                      <p className="text-white/90">
-                        We are a leading cleaning company dedicated to providing
-                        top-notch services to our clients. Our team of
-                        professionals is committed to ensuring your space is
-                        spotless and welcoming.
+                        Temizlik sektöründe yılların verdiği deneyimle,
+                        müşterilerimize en iyi hizmeti sunmayı amaçlıyoruz.
+                        Profesyonel ekibimiz ve kaliteli malzemelerimizle, her
+                        zaman beklentilerinizi aşan sonuçlar elde ediyoruz.
                      </p>
                   </div>
                   <div>
                      <h4 className="mb-5 text-2xl font-medium text-white">
-                        Services
+                        Hizmetlerimiz
                      </h4>
                      <ul className="space-y-2 text-white/90">
                         {siteConfig.services.map((service, index) => (
@@ -29,7 +29,7 @@ export default function Footer() {
                   </div>
                   <div>
                      <h4 className="mb-5 text-2xl font-medium text-white">
-                        Contact Us
+                        İletişim Bilgileri
                      </h4>
                      <p className="text-white/90">{siteConfig.address}</p>
                      <p className="mt-2 text-white/90">
@@ -65,8 +65,8 @@ export default function Footer() {
          <div className="bg-white">
             <div className="container mx-auto px-5">
                <div className="border-t border-neutral-200 py-5 text-center text-sm text-neutral-600">
-                  © {new Date().getFullYear()} Cleaning Company. All rights
-                  reserved.
+                  © {new Date().getFullYear()} {siteConfig.name}. Tüm hakları
+                  saklıdır.
                </div>
             </div>
          </div>

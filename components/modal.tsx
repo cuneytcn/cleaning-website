@@ -97,7 +97,7 @@ export default function Modal({ elHeight, open, setOpen }: Props) {
                </div>
                <div className="mt-10">
                   <button className="inline-flex w-full items-center justify-center bg-blue-500 px-4 py-3 font-medium text-white hover:bg-blue-600">
-                     Appointment
+                     Randevu Oluştur
                      <HugeiconsIcon
                         icon={ArrowUpRightFreeIcons}
                         className="ml-2"
@@ -115,8 +115,8 @@ export default function Modal({ elHeight, open, setOpen }: Props) {
 
                {/* Footer */}
                <div className="mt-auto border-t border-neutral-300 pt-5 text-center text-sm text-neutral-500">
-                  &copy; {new Date().getFullYear()} Bixol Cleaning. All rights
-                  reserved.
+                  &copy; {new Date().getFullYear()} {siteConfig.name}. Tüm
+                  hakları saklıdır.
                </div>
             </div>
          </div>

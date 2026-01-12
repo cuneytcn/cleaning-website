@@ -143,7 +143,7 @@ export default function Form() {
                className="inline-flex w-full cursor-pointer items-center justify-center bg-blue-500 px-4 py-3 text-white hover:bg-blue-600 md:col-span-2">
                {isSubmitting ? (
                   <>
-                     Message Sending{' '}
+                     Randevu Gönderiliyor{' '}
                      <HugeiconsIcon
                         icon={Loading03FreeIcons}
                         strokeWidth={2}
@@ -152,7 +152,7 @@ export default function Form() {
                   </>
                ) : (
                   <>
-                     Send Message{' '}
+                     Randevu Gönder{' '}
                      <HugeiconsIcon
                         icon={SentFreeIcons}
                         strokeWidth={2}

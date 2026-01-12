@@ -12,20 +12,20 @@ export default function Herosection() {
          <div className="container mx-auto px-5">
             <div className="isolate ml-auto flex w-full max-w-2xl flex-col text-right text-balance xl:max-w-4xl">
                <h5 className="mb-5 text-lg font-medium text-white">
-                  We are Bixol!
+                  Profesyonel Temizlik Hizmetleri
                </h5>
-               <h1 className="text-4xl font-bold text-white md:text-5xl xl:text-7xl">
-                  Bixol is a residential cleaning company
+               <h1 className="text-4xl font-bold text-white md:text-5xl xl:text-7xl/snug">
+                  Bixol ile Temizliğin Keyfini Çıkarın !
                </h1>
                <p className="mt-10 text-white/70">
-                  As a web crawler expert, I help organizations <br /> adjust to
-                  the expanding significance.
+                  Bixol profesyonel temizlik hizmetleri sunar. <br /> Hijyen ve
+                  memnuniyet garantisi ile çalışıyoruz.
                </p>
                <div className="mt-10 ml-auto inline-flex items-center gap-5">
                   <Link
                      href={'/'}
                      className="inline-flex items-center justify-center bg-white px-4 py-3 font-medium text-neutral-700 hover:bg-blue-100">
-                     Appointment
+                     Randevu Oluştur
                      <HugeiconsIcon
                         icon={ArrowRight02FreeIcons}
                         className="ml-2"

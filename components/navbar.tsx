@@ -160,7 +160,7 @@ export default function Navbar() {
                      <Link
                         href={siteConfig.appointment}
                         className="inline-flex items-center justify-center bg-blue-500 px-4 py-3 font-medium text-white hover:bg-blue-600">
-                        Appointment
+                        Randevu Oluştur
                         <HugeiconsIcon
                            icon={ArrowRight02FreeIcons}
                            className="ml-2"

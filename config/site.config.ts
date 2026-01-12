@@ -1,23 +1,24 @@
 export const siteConfig = {
-   name: 'Bixol Cleaning Service',
-   description: 'A professional cleaning service for homes and offices.',
+   name: 'Bixol Temizlik',
+   description:
+      'Bixol Cleaning, profesyonel temizlik hizmetleri sunan lider bir şirkettir. Ev, ofis ve endüstriyel temizlikte uzmanlaşmış ekibimizle hijyen ve memnuniyet garantisi veriyoruz.',
    logo: '/images/logo-bixol.png',
    navigations: [
-      { title: 'Home', href: '/' },
-      { title: 'About Us', href: '/about' },
-      { title: 'Services', href: '/services' },
-      { title: 'Testimonials', href: '/testimonials' },
+      { title: 'Anasayfa', href: '/' },
+      { title: 'Hakkımızda', href: '/about' },
+      { title: 'Hizmetler', href: '/services' },
+      { title: 'Referanslar', href: '/testimonials' },
       { title: 'Blog', href: '/blog' },
-      { title: 'Contact', href: '/contact' },
+      { title: 'İletişim', href: '/contact' },
    ],
    appointment: '/appointment',
-   welcome: 'Welcome to our Bixol Cleaning Service!',
+   welcome: 'Bixol Temizlik Hizmetlerimize Hoşgeldiniz!',
    call: {
-      label: 'Call for help',
+      label: 'Yardım için arayın',
       phone: '+1-800-123-4567',
    },
    message: {
-      label: 'Message to us',
+      label: 'Bize mesaj gönderin',
       email: 'info@bixolcleaning.com',
    },
    socials: {
@@ -28,10 +29,10 @@ export const siteConfig = {
    },
    address: '2 Holt Street, Surry Hills, Australia.',
    services: [
-      'Residential Cleaning',
-      'Commercial Cleaning',
-      'Window Cleaning',
-      'Carpet Cleaning',
-      'Post-Construction Cleaning',
+      'Ev Temizliği',
+      'Ofis Temizliği',
+      'Pencere Temizliği',
+      'Halı Temizliği',
+      'İnşaat Sonrası Temizlik',
    ],
 };

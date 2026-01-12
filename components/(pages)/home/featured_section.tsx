@@ -13,10 +13,10 @@ export default function FeaturedSection() {
             <div className="container mx-auto px-5">
                <div className="mx-auto max-w-xl pt-12 pb-32 text-center">
                   <h4 className="mb-5 text-2xl font-medium opacity-80">
-                     Our featured services
+                     Öne Çıkan Hizmetler
                   </h4>
                   <h2 className="mb-5 text-4xl font-semibold text-blue-500">
-                     Why will you choose our services?
+                     Neden hizmetlerimizi seçmelisiniz ?
                   </h2>
                </div>
             </div>
@@ -33,8 +33,8 @@ export default function FeaturedSection() {
                            className="size-12 text-blue-500 xl:size-20"
                         />
                      }
-                     title="Door Cleaning"
-                     description="Our staff are well-trained professionals who are experts in their field."
+                     title="Kapı Temizliği"
+                     description="Personelimiz alanında uzman, iyi eğitimli profesyonellerdir."
                      href="/"
                   />
                   <Inset
@@ -46,8 +46,8 @@ export default function FeaturedSection() {
                            className="size-12 text-blue-500 xl:size-20"
                         />
                      }
-                     title="Car Cleaning"
-                     description="Our staff are well-trained professionals who are experts in their field."
+                     title="Araç Temizliği"
+                     description="Personelimiz alanında uzman, iyi eğitimli profesyonellerdir."
                      href="/"
                   />
                   <Inset
@@ -59,8 +59,8 @@ export default function FeaturedSection() {
                            className="size-12 text-blue-500 xl:size-20"
                         />
                      }
-                     title="Office Cleaning"
-                     description="Our staff are well-trained professionals who are experts in their field."
+                     title="Ofis Temizliği"
+                     description="Personelimiz alanında uzman, iyi eğitimli profesyonellerdir."
                      href="/"
                   />
                </div>

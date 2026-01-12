@@ -36,7 +36,7 @@ export default function Inset({ img, icon, title, description, href }: Props) {
                         className="size-5 text-white"
                      />
                   </span>
-                  Read more
+                  Daha Fazla Oku
                </Link>
             </div>
          </figcaption>

@@ -26,30 +26,34 @@ export default function AboutSection() {
                         </div>
                         <div className="text-white">
                            <p className="text-2xl font-bold">25+</p>
-                           <p className="text-sm">Years of Experience</p>
+                           <p className="text-sm">Yıllık Deneyim</p>
                         </div>
                      </div>
                   </div>
                </div>
                <div>
                   <h4 className="mb-5 text-2xl font-medium text-blue-500 opacity-80">
-                     About Cleaning Agency
+                     Temizlik Ajansı Hakkında
                   </h4>
                   <h2 className="mb-5 text-4xl font-semibold text-blue-500">
-                     You can depend on us to get a good services
+                     İyi hizmet almak için bize güvenebilirsiniz
                   </h2>
                   <h5 className="mb-5 font-bold text-blue-500">
-                     We are Bixol, cleaning service provider.
+                     Müşterilerimize en iyi deneyimi sunmak için optimize
+                     edilmiştir.
                   </h5>
                   <p className="mb-10 text-neutral-700">
-                     Bixol has been optimized to give your visitors the best
-                     experience in terms of UX/UI, with a unique design t
-                     deliver all layouts and blocks you need.
+                     Temizlik Ajansı, 25 yılı aşkın süredir profesyonel temizlik
+                     hizmetleri sunmaktadır. Müşteri memnuniyetini en üst düzeye
+                     çıkarmak için titizlikle çalışıyor ve her türlü temizlik
+                     ihtiyacınızı karşılıyoruz. Ev temizliğinden ofis
+                     temizliğine, pencere temizliğinden inşaat sonrası temizliğe
+                     kadar geniş bir yelpazede hizmet veriyoruz.
                   </p>
                   <Link
                      href={'/'}
                      className="inline-flex items-center justify-center bg-blue-500 px-4 py-3 font-medium text-white hover:bg-blue-600">
-                     About us
+                     Daha Fazla Bilgi
                      <HugeiconsIcon
                         icon={ArrowRight02FreeIcons}
                         className="ml-2"
